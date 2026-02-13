@@ -1,46 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Converter</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="website icon" type="jpg" 
-    href="symbol.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="container">
-        <div class="heading-container">
-            <h2>Currency Converter</h2>
-            <i id="theme-icon" class="fas fa-sun" onclick="toggleIcon()"></i>
+  <main class="container">
+    <header class="top">
+      <div class="logo">
+        <div class="logoIcon">₹</div>
+        <div>
+          <h1>Currency Converter</h1>
+          <p>Live exchange rates • Search • Flags • History</p>
         </div>
-        <form>
-            <div class="amount">
-                <p>Enter Amount</p>
-                <input value="1" type="text">
+      </div>
+
+      <div class="topBtns">
+        <button id="themeBtn" class="iconBtn" title="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <label>Amount</label>
+        <div class="inputWrap">
+          <input id="amount" type="number" inputmode="decimal" value="1" min="0" />
+          <span class="hint">Enter amount</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="row">
+          <label>From</label>
+
+          <div class="selectCard">
+            <div class="selectTop">
+              <img id="fromFlag" class="flag" alt="flag" />
+              <input id="fromSearch" class="search" placeholder="Search currency (USD, INR, Euro...)" />
             </div>
-            <div class="dropdown">
-                <div class="from">
-                    <p>From</p>
-                    <div class="select-container">
-                        <img src="https://flagsapi.com/US/flat/64.png">
-                        <select name="from"></select>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-right-arrow-left" id="swap-icon"></i>
-                <div class="to"> 
-                    <p>To</p>
-                    <div class="select-container">
-                        <img src="https://flagsapi.com/IN/flat/64.png">
-                        <select name="to"></select>
-                    </div></div>
+
+            <select id="from"></select>
+          </div>
+        </div>
+
+        <button id="swapBtn" class="swapBtn" title="Swap currencies">⇄</button>
+
+        <div class="row">
+          <label>To</label>
+
+          <div class="selectCard">
+            <div class="selectTop">
+              <img id="toFlag" class="flag" alt="flag" />
+              <input id="toSearch" class="search" placeholder="Search currency (USD, INR, Euro...)" />
             </div>
-            <div class="msg">1USD = 85.92INR</div>
-            <button>Get Exchange Rate</button>
-        </form>
-    </div>
-    <script src="codes.js"></script>
-    <script src="app.js"></script>
+
+            <select id="to"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="btnRow">
+        <button id="convertBtn" class="convertBtn">Convert</button>
+        <button id="copyBtn" class="ghostBtn" title="Copy result">Copy</button>
+      </div>
+
+      <div class="result">
+        <div class="big" id="resultBig">—</div>
+        <div class="small" id="resultSmall">Choose currencies and convert</div>
+      </div>
+
+      <div class="meta">
+        <span id="status">Ready</span>
+        <span id="time">—</span>
+      </div>
+    </section>
+
+    <section class="card historyCard">
+      <div class="historyTop">
+        <h2>Conversion History</h2>
+        <button id="clearHistory" class="ghostBtn">Clear</button>
+      </div>
+
+      <div id="historyList" class="historyList">
+        <div class="historyEmpty">No conversions yet.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Made by <b>Manav</b> • Works on GitHub Pages
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
