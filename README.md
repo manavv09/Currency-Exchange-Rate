@@ -14,22 +14,16 @@ It converts currencies in real-time using live exchange rate data from an API.
 - Convert between multiple world currencies
 - Real-time exchange rate fetching using API
 - Clean and responsive UI (mobile + desktop)
-- Swap currency feature (if added)
-- Fast and lightweight (Vanilla JavaScript)
+- Swap currency feature
+- Fast and lightweight (JavaScript)
 
 ---
 
 ## 🛠 Tech Stack
 - **HTML5**
 - **CSS3**
-- **JavaScript (Vanilla JS)**
+- **JavaScript**
 - **Fetch API**
 - **Currency Exchange Rate API**
 
 ---
-
-## 📂 How to Run Locally
-
-1. Clone the repository:
-```bash
-git clone https://github.com/manavv09/Currency-Exchange-Rate.git
